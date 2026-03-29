@@ -8,8 +8,8 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../redux/services/authSlice";
 
 const Login = () => {
-  const [username, setUserName] = useState("atuny0");
-  const [password, setPassword] = useState("9uQFF1Lh");
+  const [username, setUserName] = useState("emilys");
+  const [password, setPassword] = useState("emilyspass");
   //const [btnNotShow, setBtnNotShow] = useState(true);
 
   const nav = useNavigate();
@@ -28,11 +28,11 @@ const Login = () => {
       dispatch(
         addUser({
           user: data?.firstName,
-          token: data?.token,
+          token: data?.accessToken,
           image: data?.image,
         })
       );
-      if (data.token) {
+      if (data.accessToken) {
         nav("/");
       }
     } catch (error) {
